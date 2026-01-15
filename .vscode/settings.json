@@ -1,0 +1,7 @@
+{
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "editor.guides.bracketPairs": "active",
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "workbench.iconTheme": "material-icon-theme"
+}
