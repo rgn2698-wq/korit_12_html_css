@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>API 맛보기</title>
+</head>
+<body>
+
+    <h1>오늘의 댕댕이</h1>
+    <button onclick="getDogData()">강아지 소환!</button>
+    <br><br>
+    <img id="dog-img" src="" alt="강아지 사진이 여기에 떠요" width="300">
+
+    <script>
+        // 이 함수가 '배달부'야
+        function getDogData() {
+            // fetch: "가져와!"라는 뜻의 명령어
+            fetch("https://dog.ceo/api/breeds/image/random")
+                .then(response => response.json()) // "데이터를 포장 뜯어서 JSON으로 보여줘"
+                .then(data => {
+                    // 데이터가 도착했을 때 할 일
+                    // API가 준 이미지 주소를 우리 HTML 태그에 꽂아넣기!
+                    document.getElementById("dog-img").src = data.message;
+                })
+                .catch(error => console.log("에러 났어 ㅠㅠ", error));
+        }
+    </script>
+
+</body>
+</html>
